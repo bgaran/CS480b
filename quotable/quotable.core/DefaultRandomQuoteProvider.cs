@@ -6,13 +6,23 @@ namespace quotable.core
 {
     public class DefaultRandomQuoteProvider : RandomQuoteProvider
     {
-        string[] quoteList = new string[] { "You’re off to great to places. Today is your day. Your mountain is waiting. So get on your way",
-            "Unless someone like you cares a whole awful lot. Nothing is going to get better. It’s not",
-            "It is better to know how to learn than to know" };
+        IEnumerable<string> quoteList; 
+        public DefaultRandomQuoteProvider(IEnumerable<string> inputQuotes)
+        {
+            this.quoteList = quoteList;
 
-        public IEnumerable<string> getQuotes(long numQuotes)
+        }
+
+        public IEnumerable<string> getQuotes(int numQuotes)
         {
             string[] returnList = new string[numQuotes];
+            int i = 0;
+            foreach (var x in quoteList)
+            {
+                returnList[i] = x;
+                i++;
+            }
+            
             for (int i = 0; i < numQuotes; i++)
             {
                 Random random = new Random();
