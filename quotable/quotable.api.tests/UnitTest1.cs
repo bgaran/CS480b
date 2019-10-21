@@ -10,10 +10,12 @@ namespace qoutable.api.tests
         [Test]
         public void TestMethod1()
         {
-            var generator = new NaiveHailstoneNumberGenerator();
-            var controller = new HailstoneController(generator);
+            var provider = new SimpleRandomQuoteProvider();
+            var controller = new QuoteController(provider);
 
-            var actual = controller.Get(5);
+            var actual = controller.Get(1);
+
+            Assert.That(actual.ID, Is.EqualTo(1));
 
         }
     }

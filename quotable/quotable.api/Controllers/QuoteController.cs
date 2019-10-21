@@ -36,7 +36,7 @@ namespace quotable.api.Controllers
           IEnumerable<Quote> quote;
            quote = Provider.getQuotesByID(id);
 
-            return quote;
+            return quote.ToList();
         }
 
         // POST api/values
