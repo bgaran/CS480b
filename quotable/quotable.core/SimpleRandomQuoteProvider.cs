@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using quotable.core.Models;
 
 namespace quotable.core
@@ -33,12 +34,6 @@ namespace quotable.core
             quoteList[2].Text = "It is better to know how to learn than to know";
         }
 
-        public IEnumerable<Quote> getQuotesByID(long ID)
-        {
-            initializeQuotes();
-            yield return quoteList[ID];
-        }
-
 
         public IEnumerable<Quote> getQuotes(long numQuotes)
 	    {
@@ -53,7 +48,18 @@ namespace quotable.core
             IEnumerable<Quote> returnQuotes=returnList;
             return returnQuotes;
         }
-       
+
+        public IEnumerable<Quote> getQuotesByID(int id)
+        {
+            initializeQuotes();
+            Quote[] returnList = new Quote[1];
+            if (id < quoteList.Length)
+            {
+                returnList[0] = quoteList[id];
+            }
+            IEnumerable<Quote> returnQuote = returnList;
+            return returnQuote.ToList();
+        }
     }
 }
     

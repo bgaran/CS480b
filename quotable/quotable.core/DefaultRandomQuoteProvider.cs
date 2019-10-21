@@ -45,6 +45,10 @@ namespace quotable.core
             return returnQuotes;
         }
 
+        public IEnumerable<Quote> getQuotesByID(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

@@ -15,13 +15,13 @@ namespace quotable.api.Controllers
     public class QuoteController : ControllerBase
     {
 
-        private SimpleRandomQuoteProvider Provider { get; }
+        private RandomQuoteProvider Provider { get; }
 
-        public QuoteController(SimpleRandomQuoteProvider provider)
+        public QuoteController(RandomQuoteProvider provider)
         {
             Provider = provider;
         }
-        // GET api/quote
+        // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
