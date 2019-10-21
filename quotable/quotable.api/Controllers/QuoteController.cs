@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using quotable.core;
 using Microsoft.AspNetCore.Mvc;
+using quotable.api.Models;
+using quotable.core.Models;
+
 
 namespace quotable.api.Controllers
 {
@@ -12,9 +15,9 @@ namespace quotable.api.Controllers
     public class QuoteController : ControllerBase
     {
 
-        private RandomQuoteProvider Provider { get; }
+        private SimpleRandomQuoteProvider Provider { get; }
 
-        public QuoteController(RandomQuoteProvider provider)
+        public QuoteController(SimpleRandomQuoteProvider provider)
         {
             Provider = provider;
         }
@@ -27,9 +30,13 @@ namespace quotable.api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<IEnumerable<Quote>> Get(int id)
         {
-            return "value";
+          //var quote=new Quote();
+          IEnumerable<Quote> quote;
+           quote = Provider.getQuotesByID(id);
+
+            return quote;
         }
 
         // POST api/values

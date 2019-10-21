@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using quotable.core.Models;
 
 namespace quotable.core
 
@@ -9,12 +10,12 @@ namespace quotable.core
     /// </summary>
     public class DefaultRandomQuoteProvider: RandomQuoteProvider
     {
-        IEnumerable<string> quoteList; 
+        IEnumerable<Quote> quoteList; 
         /// <summary>
         /// constructer takes in a list of quotes of type IEnumerable
         /// </summary>
         /// <param name="inputQuotes"></param>
-        public DefaultRandomQuoteProvider(IEnumerable<string> inputQuotes)
+        public DefaultRandomQuoteProvider(IEnumerable<Quote> inputQuotes)
         {
             quoteList = inputQuotes;
 
@@ -24,23 +25,23 @@ namespace quotable.core
         /// </summary>
         /// <param name="numQuotes"></param>
         /// <returns></returns>
-        public IEnumerable<string> getQuotes(long numQuotes)
+        public IEnumerable<Quote> getQuotes(long numQuotes)
         {
-            List<string> typeList = new List<string>();
+            List<Quote> typeList = new List<Quote>();
             int i = 0;
             foreach (var x in quoteList)
             {
-                typeList[i] = x;
+                typeList[i] = new Quote();
                 i++;
             }
-            string[] returnList = new string[numQuotes];
+            Quote[] returnList = new Quote[numQuotes];
             for (int y = 0; y < numQuotes; y++)
             {
                 Random random = new Random();
                 int randomQuote = random.Next(0, 3);
                 returnList[y] = typeList[randomQuote];
             }
-            IEnumerable<string> returnQuotes = returnList;
+            IEnumerable<Quote> returnQuotes = returnList;
             return returnQuotes;
         }
 

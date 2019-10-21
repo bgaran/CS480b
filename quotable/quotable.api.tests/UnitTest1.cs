@@ -1,14 +1,20 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace quotable.api.tests
+﻿using quotable.core;
+using quotable.api.Controllers;
+using NUnit.Framework;
+using Microsoft.AspNetCore.Mvc;
+namespace qoutable.api.tests
 {
-    [TestClass]
-    public class UnitTest1
+    [TestFixture]
+    public class Tests
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
+            var generator = new NaiveHailstoneNumberGenerator();
+            var controller = new HailstoneController(generator);
+
+            var actual = controller.Get(5);
+
         }
     }
 }

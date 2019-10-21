@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using quotable.core.Models;
 
 namespace quotable.core
 {
@@ -7,6 +8,6 @@ namespace quotable.core
     /// getQuotes method with the correct parameters and return type is present
     public interface RandomQuoteProvider
     {
-        IEnumerable<string> getQuotes(long numQuotes);
+        IEnumerable<Quote> getQuotes(long numQuotes);
     }
 }
