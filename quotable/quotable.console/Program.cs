@@ -1,4 +1,5 @@
 ﻿using quotable.core;
+using quotable.core.Models;
 using System;
 using System.Collections.Generic;
 
@@ -10,7 +11,7 @@ namespace quotable.console
         static void Main(string[] args)
         {
             SimpleRandomQuoteProvider provider=new SimpleRandomQuoteProvider();
-            IEnumerable<string> quotes;
+            IEnumerable<Quote> quotes;
            // RandomQuoteProvider provider=new SimpleRandomQuoteProvider();
 			Console.Write("Enter the number of quotes: ");
             var numQuotes = Console.ReadLine();

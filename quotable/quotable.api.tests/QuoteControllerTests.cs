@@ -1,11 +1,11 @@
 ﻿using quotable.core;
+using NUnit.Framework;
 using quotable.api.Controllers;
 using NUnit.Framework;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
-namespace qoutable.api.tests3
+
+namespace qoutable.api.tests
 {
 
     public class Tests

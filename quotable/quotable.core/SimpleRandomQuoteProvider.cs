@@ -34,7 +34,11 @@ namespace quotable.core
             quoteList[2].Text = "It is better to know how to learn than to know";
         }
 
-
+        /// <summary>
+        /// return a given number of random quotes
+        /// </summary>
+        /// <param name="numQuotes"></param>
+        /// <returns></returns>
         public IEnumerable<Quote> getQuotes(long numQuotes)
 	    {
             initializeQuotes();
@@ -48,6 +52,10 @@ namespace quotable.core
             IEnumerable<Quote> returnQuotes=returnList;
             return returnQuotes;
         }
+        /// <summary>
+        /// get a single random quote
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Quote> getRandomQuote()
         {
             initializeQuotes();
@@ -58,6 +66,11 @@ namespace quotable.core
             IEnumerable<Quote> returnQuotes = returnList;
             return returnQuotes;
         }
+        /// <summary>
+        /// get a quote with a given id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IEnumerable<Quote> getQuotesByID(int id)
         {
             initializeQuotes();
@@ -69,7 +82,10 @@ namespace quotable.core
             IEnumerable<Quote> returnQuote = returnList;
             return returnQuote.ToList();
         }
-
+        /// <summary>
+        /// returns all quotes
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Quote> getAllQuotes()
         {
             initializeQuotes();

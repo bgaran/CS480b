@@ -20,7 +20,10 @@ namespace quotable.core
             quoteList = inputQuotes;
 
         }
-
+        /// <summary>
+        /// this method is not implemented in this class
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Quote> getAllQuotes()
         {
             throw new NotImplementedException();
@@ -50,12 +53,20 @@ namespace quotable.core
             IEnumerable<Quote> returnQuotes = returnList;
             return returnQuotes;
         }
+        /// <summary>
+        /// this method is not implemented in this class
 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IEnumerable<Quote> getQuotesByID(int id)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// this method is not implemented in this class
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Quote> getRandomQuote()
         {
             throw new NotImplementedException();

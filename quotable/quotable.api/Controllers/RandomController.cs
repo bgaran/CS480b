@@ -10,17 +10,27 @@ using quotable.core.Models;
 
 namespace quotable.api.Controllers
 {
+    /// <summary>
+    /// provides a random quote
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class RandomController : ControllerBase
     {
 
         private RandomQuoteProvider Provider { get; }
-
+        /// <summary>
+        /// constructor that takes a RandomQuoteProvider
+        /// </summary>
+        /// <param name="provider"></param>
         public RandomController(RandomQuoteProvider provider)
         {
             Provider = provider;
         }
+        /// <summary>
+        /// returns a radnom quote
+        /// </summary>
+        /// <returns></returns>
         // GET api/random
         [HttpGet]
         public ActionResult<IEnumerable<Quote>> Get()

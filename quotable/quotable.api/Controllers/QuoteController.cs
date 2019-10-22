@@ -12,16 +12,25 @@ namespace quotable.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    ///get a quote by id or get all quotes
     public class QuoteController : ControllerBase
     {
-
+       
         private RandomQuoteProvider Provider { get; }
-
+        /// <summary>
+        /// constructior for the controller
+        /// takes a RandomQuoteProvider
+        /// </summary>
+        /// <param name="provider"></param>
         public QuoteController(RandomQuoteProvider provider)
         {
             Provider = provider;
         }
-        // GET api/values
+        /// <summary>
+        /// returns all quotes
+        /// </summary>
+        /// <returns></returns>
+        // GET api/quote
         [HttpGet]
         public ActionResult<IEnumerable<Quote>> Get()
         {
@@ -30,7 +39,11 @@ namespace quotable.api.Controllers
 
             return quotes.ToList();
         }
-
+        /// <summary>
+        /// returns quote at a given id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET api/values/1
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<Quote>> Get(int id)
