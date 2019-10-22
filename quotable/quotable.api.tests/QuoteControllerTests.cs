@@ -1,4 +1,5 @@
 ﻿using quotable.core;
+using quotable.core.Models;
 using NUnit.Framework;
 using quotable.api.Controllers;
 using NUnit.Framework;
@@ -22,8 +23,7 @@ namespace qoutable.api.tests
             var controller = new QuoteController(provider);
 
             var actual = controller.Get(1);
-
-            Assert.That(actual.ID, Is.EqualTo(1));
+            Assert.That(actual, Is.EqualTo(1));
         }
     }
 }
