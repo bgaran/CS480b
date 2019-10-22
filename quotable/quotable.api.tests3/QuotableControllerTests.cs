@@ -2,13 +2,21 @@
 using quotable.api.Controllers;
 using NUnit.Framework;
 using Microsoft.AspNetCore.Mvc;
-namespace qoutable.api.tests
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+
+namespace qoutable.api.tests3
 {
-    [TestFixture]
+
     public class Tests
     {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
         [Test]
-        public void TestMethod1()
+        public void Test_Get_Success()
         {
             var provider = new SimpleRandomQuoteProvider();
             var controller = new QuoteController(provider);
@@ -16,7 +24,6 @@ namespace qoutable.api.tests
             var actual = controller.Get(1);
 
             Assert.That(actual.ID, Is.EqualTo(1));
-
         }
     }
 }

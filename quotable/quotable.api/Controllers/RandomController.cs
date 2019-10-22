@@ -12,35 +12,31 @@ namespace quotable.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuoteController : ControllerBase
+    public class RandomController : ControllerBase
     {
 
         private RandomQuoteProvider Provider { get; }
 
-        public QuoteController(RandomQuoteProvider provider)
+        public RandomController(RandomQuoteProvider provider)
         {
             Provider = provider;
         }
-        // GET api/values
+        // GET api/random
         [HttpGet]
         public ActionResult<IEnumerable<Quote>> Get()
         {
             IEnumerable<Quote> quotes;
-            quotes = Provider.getAllQuotes();
+            quotes = Provider.getRandomQuote();
 
             return quotes.ToList();
         }
 
-        // GET api/values/1
-        [HttpGet("{id}")]
-        public ActionResult<IEnumerable<Quote>> Get(int id)
-        {
-          //var quote=new Quote();
-          IEnumerable<Quote> quote;
-           quote = Provider.getQuotesByID(id);
-
-            return quote.ToList();
-        }
+        // GET api/random/1
+        //[HttpGet("{id}")]
+       // public ActionResult<IEnumerable<Quote>> Get(int id)
+       // {
+        //    return 1;
+       // }
 
         // POST api/values
         [HttpPost]

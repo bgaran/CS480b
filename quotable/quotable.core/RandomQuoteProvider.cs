@@ -10,5 +10,7 @@ namespace quotable.core
     {
         IEnumerable<Quote> getQuotes(long numQuotes);
         IEnumerable<Quote> getQuotesByID(int id);
+        IEnumerable<Quote> getAllQuotes();
+        IEnumerable<Quote> getRandomQuote();
     }
 }

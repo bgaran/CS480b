@@ -48,7 +48,16 @@ namespace quotable.core
             IEnumerable<Quote> returnQuotes=returnList;
             return returnQuotes;
         }
-
+        public IEnumerable<Quote> getRandomQuote()
+        {
+            initializeQuotes();
+            Quote[] returnList = new Quote[1];
+                Random random = new Random();
+                int randomQuote = random.Next(0, 3);
+                returnList[0] = quoteList[randomQuote];
+            IEnumerable<Quote> returnQuotes = returnList;
+            return returnQuotes;
+        }
         public IEnumerable<Quote> getQuotesByID(int id)
         {
             initializeQuotes();
@@ -60,6 +69,21 @@ namespace quotable.core
             IEnumerable<Quote> returnQuote = returnList;
             return returnQuote.ToList();
         }
+
+        public IEnumerable<Quote> getAllQuotes()
+        {
+            initializeQuotes();
+            var numQuotes = quoteList.Length;
+            Quote[] returnList = new Quote[numQuotes];
+            for (int i = 0; i < numQuotes; i++)
+            {
+                returnList[i] = quoteList[i];
+            }
+            IEnumerable<Quote> returnQuotes = returnList;
+            return returnQuotes;
+        }
+
+       
     }
 }
     

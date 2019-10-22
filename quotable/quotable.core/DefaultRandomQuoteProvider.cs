@@ -20,6 +20,12 @@ namespace quotable.core
             quoteList = inputQuotes;
 
         }
+
+        public IEnumerable<Quote> getAllQuotes()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// This method takes an input of the number of quotes to be provided and returns an IEnumerable List of quotes.
         /// </summary>
@@ -46,6 +52,11 @@ namespace quotable.core
         }
 
         public IEnumerable<Quote> getQuotesByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Quote> getRandomQuote()
         {
             throw new NotImplementedException();
         }
