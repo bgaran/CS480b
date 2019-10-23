@@ -33,12 +33,12 @@ namespace quotable.api.Controllers
         /// <returns></returns>
         // GET api/random
         [HttpGet]
-        public ActionResult<IEnumerable<Quote>> Get()
+        public ActionResult<Quote> Get()
         {
-            IEnumerable<Quote> quotes;
+            Quote quotes;
             quotes = Provider.getRandomQuote();
 
-            return quotes.ToList();
+            return quotes;
         }
 
         // GET api/random/1

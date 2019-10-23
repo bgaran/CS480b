@@ -36,22 +36,23 @@ namespace quotable.core
         /// <returns></returns>
         public IEnumerable<Quote> getQuotes(long numQuotes)
         {
-            List<Quote> typeList = new List<Quote>();
-            int i = 0;
-            foreach (var x in quoteList)
-            {
-                typeList[i] = new Quote();
-                i++;
-            }
-            Quote[] returnList = new Quote[numQuotes];
-            for (int y = 0; y < numQuotes; y++)
-            {
-                Random random = new Random();
-                int randomQuote = random.Next(0, 3);
-                returnList[y] = typeList[randomQuote];
-            }
-            IEnumerable<Quote> returnQuotes = returnList;
-            return returnQuotes;
+            throw new NotImplementedException();
+            /*  List<Quote> typeList = new List<Quote>();
+              int i = 0;
+              foreach (var x in quoteList)
+              {
+                  typeList[i] = new Quote();
+                  i++;
+              }
+              Quote[] returnList = new Quote[numQuotes];
+              for (int y = 0; y < numQuotes; y++)
+              {
+                  Random random = new Random();
+                  int randomQuote = random.Next(0, 3);
+                  returnList[y] = typeList[randomQuote];
+              }
+              IEnumerable<Quote> returnQuotes = returnList;
+              return returnQuotes;*/
         }
         /// <summary>
         /// this method is not implemented in this class
@@ -59,7 +60,7 @@ namespace quotable.core
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public IEnumerable<Quote> getQuotesByID(int id)
+        public Quote getQuotesByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -67,7 +68,7 @@ namespace quotable.core
         /// this method is not implemented in this class
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Quote> getRandomQuote()
+        public Quote getRandomQuote()
         {
             throw new NotImplementedException();
         }

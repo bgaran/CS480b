@@ -9,8 +9,8 @@ namespace quotable.core
     public interface RandomQuoteProvider
     {
         IEnumerable<Quote> getQuotes(long numQuotes);
-        IEnumerable<Quote> getQuotesByID(int id);
+        Quote getQuotesByID(int id);
         IEnumerable<Quote> getAllQuotes();
-        IEnumerable<Quote> getRandomQuote();
+        Quote getRandomQuote();
     }
 }

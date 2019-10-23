@@ -6,8 +6,14 @@ namespace quotable.core.Models
 {
     public class Quote
     {
-        public string Text { get; set; }
-        public int ID { get; set; }
-        public string Author { get; set; }
+        public Quote(string text,int id,string author)
+        {
+            Text = text;
+            ID = id;
+            Author = author;
+        }
+        public string Text { get; }
+        public int ID { get;}
+        public string Author { get;}
     }
 }

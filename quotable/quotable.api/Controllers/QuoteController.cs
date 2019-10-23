@@ -46,13 +46,13 @@ namespace quotable.api.Controllers
         /// <returns></returns>
         // GET api/values/1
         [HttpGet("{id}")]
-        public ActionResult<IEnumerable<Quote>> Get(int id)
+        public ActionResult<Quote> Get(int id)
         {
           //var quote=new Quote();
-          IEnumerable<Quote> quote;
+          Quote quote;
            quote = Provider.getQuotesByID(id);
 
-            return quote.ToList();
+            return quote;
         }
 
         // POST api/values
