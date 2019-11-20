@@ -10,12 +10,12 @@ namespace quotable.core
     /// </summary>
     public class DefaultRandomQuoteProvider: RandomQuoteProvider
     {
-        IEnumerable<Quote> quoteList; 
+        IEnumerable<quotable.core.Models.Quote> quoteList; 
         /// <summary>
         /// constructer takes in a list of quotes of type IEnumerable
         /// </summary>
         /// <param name="inputQuotes"></param>
-        public DefaultRandomQuoteProvider(IEnumerable<Quote> inputQuotes)
+        public DefaultRandomQuoteProvider(IEnumerable<quotable.core.Models.Quote> inputQuotes)
         {
             quoteList = inputQuotes;
 
@@ -24,7 +24,7 @@ namespace quotable.core
         /// this method is not implemented in this class
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Quote> getAllQuotes()
+        public IEnumerable<quotable.core.Models.Quote> getAllQuotes()
         {
             throw new NotImplementedException();
         }
@@ -34,7 +34,7 @@ namespace quotable.core
         /// </summary>
         /// <param name="numQuotes"></param>
         /// <returns></returns>
-        public IEnumerable<Quote> getQuotes(long numQuotes)
+        public IEnumerable<quotable.core.Models.Quote> getQuotes(long numQuotes)
         {
             throw new NotImplementedException();
             /*  List<Quote> typeList = new List<Quote>();
@@ -60,7 +60,7 @@ namespace quotable.core
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Quote getQuotesByID(int id)
+        public quotable.core.Models.Quote getQuotesByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -68,7 +68,7 @@ namespace quotable.core
         /// this method is not implemented in this class
         /// </summary>
         /// <returns></returns>
-        public Quote getRandomQuote()
+        public quotable.core.Models.Quote getRandomQuote()
         {
             throw new NotImplementedException();
         }

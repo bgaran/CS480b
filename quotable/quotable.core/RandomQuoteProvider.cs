@@ -8,9 +8,9 @@ namespace quotable.core
     /// getQuotes method with the correct parameters and return type is present
     public interface RandomQuoteProvider
     {
-        IEnumerable<Quote> getQuotes(long numQuotes);
-        Quote getQuotesByID(int id);
-        IEnumerable<Quote> getAllQuotes();
-        Quote getRandomQuote();
+        IEnumerable<quotable.core.Models.Quote> getQuotes(long numQuotes);
+        quotable.core.Models.Quote getQuotesByID(int id);
+        IEnumerable<quotable.core.Models.Quote> getAllQuotes();
+        quotable.core.Models.Quote getRandomQuote();
     }
 }

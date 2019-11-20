@@ -33,9 +33,9 @@ namespace quotable.api.Controllers
         /// <returns></returns>
         // GET api/random
         [HttpGet]
-        public ActionResult<Quote> Get()
+        public ActionResult<quotable.core.Models.Quote> Get()
         {
-            Quote quotes;
+            quotable.core.Models.Quote quotes;
             quotes = Provider.getRandomQuote();
 
             return quotes;
