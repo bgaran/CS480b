@@ -13,34 +13,34 @@ namespace quotable.core
         /// <summary>
         /// array that stores the available quotes
         /// </summary>
-      public  Quote[] quoteList = new Quote[] 
-       {new Quote("You’re off to great to places. Today is your day. Your mountain is waiting. So get on your way",0,"Dr.Seuss"),
-           new Quote("Unless someone like you cares a whole awful lot. Nothing is going to get better. It’s not",1,"Dr.Seuss"),
-           new Quote("It is better to know how to learn than to know",2,"Dr.Seuss")};
+         public quotable.core.Models.Quote[] quoteList = new quotable.core.Models.Quote[] 
+          {new quotable.core.Models.Quote("You’re off to great to places. Today is your day. Your mountain is waiting. So get on your way",0,"Dr.Seuss"),
+              new quotable.core.Models.Quote("Unless someone like you cares a whole awful lot. Nothing is going to get better. It’s not",1,"Dr.Seuss"),
+              new quotable.core.Models.Quote("It is better to know how to learn than to know",2,"Dr.Seuss")};
 
-         /// <summary>
+        /// <summary>
         /// This method takes an input of the number of quotes to be provided and returns an IEnumerable List of quotes.
         /// </summary>
         /// <param name="numQuotes"></param>
         /// <returns></returns>
         ///
-        public IEnumerable<Quote> getQuotes(long numQuotes)
+        public IEnumerable<quotable.core.Models.Quote> getQuotes(long numQuotes)
 	    {
-           Quote[] returnList=new Quote[numQuotes];
+            quotable.core.Models.Quote[] returnList=new quotable.core.Models.Quote[numQuotes];
             for (int i=0;i<numQuotes;i++)
             {
                 Random random = new Random();
                 int randomQuote = random.Next(0, 3);
                 returnList[i]=quoteList[randomQuote];
             }
-            IEnumerable<Quote> returnQuotes=returnList;
+            IEnumerable<quotable.core.Models.Quote> returnQuotes=returnList;
             return returnQuotes;
         }
         /// <summary>
         /// get a single random quote
         /// </summary>
         /// <returns></returns>
-        public Quote getRandomQuote()
+        public quotable.core.Models.Quote getRandomQuote()
         {
                 Random random = new Random();
                 int randomQuote = random.Next(0, quoteList.Length);
@@ -51,7 +51,7 @@ namespace quotable.core
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Quote getQuotesByID(int id)
+        public quotable.core.Models.Quote getQuotesByID(int id)
         {
             if (id < quoteList.Length)
             {
@@ -63,16 +63,16 @@ namespace quotable.core
         /// returns all quotes
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Quote> getAllQuotes()
+        public IEnumerable<quotable.core.Models.Quote> getAllQuotes()
         {
             var numQuotes = quoteList.Length;
-            Quote[] returnList = new Quote[numQuotes];
-            for (int i = 0; i < numQuotes; i++)
-            {
-                returnList[i] = quoteList[i];
-            }
-            IEnumerable<Quote> returnQuotes = returnList;
-            return returnQuotes;
+             quotable.core.Models.Quote[] returnList = new quotable.core.Models.Quote[numQuotes];
+             for (int i = 0; i < numQuotes; i++)
+             {
+                 returnList[i] = quoteList[i];
+             }
+             IEnumerable<quotable.core.Models.Quote> returnQuotes = returnList;
+             return returnQuotes;
         }
     }
 }

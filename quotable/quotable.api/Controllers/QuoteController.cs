@@ -6,7 +6,7 @@ using quotable.core;
 using Microsoft.AspNetCore.Mvc;
 using quotable.api.Models;
 using quotable.core.Models;
-
+using Quote = quotable.core.Quote;
 
 namespace quotable.api.Controllers
 {
@@ -15,16 +15,16 @@ namespace quotable.api.Controllers
     ///get a quote by id or get all quotes
     public class QuoteController : ControllerBase
     {
-       
+        private readonly QuotableContext _context;
         private RandomQuoteProvider Provider { get; }
         /// <summary>
         /// constructior for the controller
         /// takes a RandomQuoteProvider
         /// </summary>
         /// <param name="provider"></param>
-        public QuoteController(RandomQuoteProvider provider)
+        public QuoteController(QuotableContext context)
         {
-            Provider = provider;
+                _context = context;
         }
         /// <summary>
         /// returns all quotes
@@ -32,12 +32,18 @@ namespace quotable.api.Controllers
         /// <returns></returns>
         // GET api/quote
         [HttpGet]
-        public ActionResult<IEnumerable<Quote>> Get()
+        public IEnumerable<quotable.core.Quote> Get()
         {
-            IEnumerable<Quote> quotes;
+
+            return from quote in _context.Quotes
+                   select new Quote()
+                   {
+                       QuoteContent = quote.QuoteContent
+                   };
+           /* IEnumerable<quotable.core.Quote> quotes;
             quotes = Provider.getAllQuotes();
 
-            return quotes.ToList();
+            return quotes.ToList();*/
         }
         /// <summary>
         /// returns quote at a given id
@@ -46,11 +52,11 @@ namespace quotable.api.Controllers
         /// <returns></returns>
         // GET api/values/1
         [HttpGet("{id}")]
-        public ActionResult<Quote> Get(int id)
+        public ActionResult<quotable.core.Models.Quote> Get(int id)
         {
-          //var quote=new Quote();
-          Quote quote;
-           quote = Provider.getQuotesByID(id);
+            //var quote=new Quote();
+            quotable.core.Models.Quote quote;
+            quote = Provider.getQuotesByID(id);
 
             return quote;
         }
