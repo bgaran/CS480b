@@ -22,10 +22,15 @@ namespace quotable.api.Controllers
         /// takes a RandomQuoteProvider
         /// </summary>
         /// <param name="provider"></param>
-        public QuoteController(QuotableContext context)
+         public QuoteController(QuotableContext context)
+         {
+                 _context = context;
+         }
+
+        /*public QuoteController(RandomQuoteProvider provider)
         {
-                _context = context;
-        }
+            Provider = provider;
+        }*/
         /// <summary>
         /// returns all quotes
         /// </summary>
@@ -40,10 +45,14 @@ namespace quotable.api.Controllers
                    {
                        QuoteContent = quote.QuoteContent
                    };
-           /* IEnumerable<quotable.core.Quote> quotes;
+           /* IEnumerable<quotable.core.Models.Quote> quotes;
             quotes = Provider.getAllQuotes();
-
             return quotes.ToList();*/
+
+             /*IEnumerable<quotable.core.Quote> quotes;
+             quotes = Provider.getAllQuotes();
+
+             return quotes.ToList();*/
         }
         /// <summary>
         /// returns quote at a given id

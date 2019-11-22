@@ -90,8 +90,8 @@ namespace quotable.console
             };
             var author3 = new Author()
             {
-                FirstName = "J.K. Rowling",
-                LastName = "Tuvok"
+                FirstName = "J.K.",
+                LastName = "Rowling"
             };
 
             var quote1 = new Quote();
